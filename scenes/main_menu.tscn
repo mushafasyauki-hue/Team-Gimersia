@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=24 format=3]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
 [ext_resource type="Texture2D" path="res://Assets/Background/bg main menu.png" id="2_bg"]
+[ext_resource type="Script" path="res://scripts/title_flicker.gd" id="3_flicker"]
 [ext_resource type="FontFile" path="res://Assets/fonts/Forum-Regular.ttf" id="4_forum"]
 [ext_resource type="Script" path="res://scripts/title_glow.gd" id="5_tglow"]
 [ext_resource type="Shader" path="res://shaders/soft_glow.gdshader" id="6_glowsh"]
@@ -9,6 +10,7 @@
 [ext_resource type="FontVariation" path="res://Assets/fonts/forum_menu.tres" id="8_menufont"]
 [ext_resource type="Texture2D" path="res://Assets/images/clean/keris_perak.png" id="9_perak"]
 [ext_resource type="Script" path="res://scripts/menu_cursor.gd" id="10_cursor"]
+[ext_resource type="Script" path="res://scripts/ghost_float_animator.gd" id="11_float"]
 [ext_resource type="Texture2D" path="res://Assets/Karakter/hantu.png" id="12_hantu"]
 [ext_resource type="Texture2D" path="res://Assets/images/clean/hantu_glow.png" id="13_hglow"]
 [ext_resource type="Texture2D" path="res://Assets/images/clean/keris_emas.png" id="14_emas"]
@@ -86,6 +88,7 @@ offset_right = 770.0
 offset_bottom = 361.0
 text = "Pulang"
 label_settings = SubResource("LabelSettings_title")
+script = ExtResource("3_flicker")
 
 [node name="TitleGlow" type="TextureRect" parent="TitleContainer/GameTitle"]
 show_behind_parent = true
@@ -177,6 +180,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("11_float")
 
 [node name="Ghost" type="TextureRect" parent="GhostGroup"]
 self_modulate = Color(0.93, 0.93, 0.93, 0.85)
